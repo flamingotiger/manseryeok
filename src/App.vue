@@ -57,7 +57,6 @@ function showChart() {
             <span class="section-kicker" hidden>BIRTH INFORMATION</span>
             <h2 id="form-title">출생 정보 입력</h2>
           </div>
-          <span class="form-step">01 / 02</span>
         </div>
         <form @submit.prevent="showChart">
           <div class="form-grid">
