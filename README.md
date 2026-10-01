@@ -1,76 +1,20 @@
-# manseryeok
+# 만세력
 
-This template should help get you started developing with Vue 3 in Vite.
+Vue 3로 만든 생년월일 기반 만세력 페이지입니다. 양력 생년월일, 출생 시간, 성별을 입력하면 사주 네 기둥과 오행 분포, 대운을 보여줍니다.
 
-## Recommended IDE Setup
-
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Recommended Browser Setup
-
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
+## 실행
 
 ```sh
 pnpm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
 pnpm dev
 ```
 
-### Type-Check, Compile and Minify for Production
+프로덕션 빌드와 타입 검사는 `pnpm build`로 실행합니다.
 
-```sh
-pnpm build
-```
+## 계산 코드
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+- 화면과 입력 처리: `src/App.vue`
+- 만세력 계산과 한글 표기: `src/lib/manseryeok.ts`
+- 절기 기준 사주와 대운 계산: `lunar-typescript`
 
-```sh
-pnpm test:unit
-```
-
-### Run End-to-End Tests with [Playwright](https://playwright.dev)
-
-```sh
-# Install browsers for the first run
-npx playwright install
-
-# When testing on CI, must build the project first
-pnpm build
-
-# Runs the end-to-end tests
-pnpm test:e2e
-# Runs the tests only on Chromium
-pnpm test:e2e --project=chromium
-# Runs the tests of a specific file
-pnpm test:e2e tests/example.spec.ts
-# Runs the tests in debug mode
-pnpm test:e2e --debug
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-pnpm lint
-```
-# manseryeok
-# manseryeok
-# manseryeok
+계산이 이루어지는 부분마다 한국어 주석을 넣었습니다. 현재 양력과 한국 표준시의 출생 시각을 입력받습니다. 출생지 진태양시 보정과 유파별 야자시 규칙은 적용하지 않습니다.
